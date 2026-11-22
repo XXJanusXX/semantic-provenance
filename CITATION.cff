@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: >-
+  If you use this software, research framework, or associated research
+  artifacts, please cite this repository.
+title: >-
+  Semantic Preservation, Cryptographic Provenance and Reproducible Evaluation
+  in AI-Driven Information Transformations
+type: software
+authors:
+  - family-names: Laxminarayanan
+    given-names: Siddarth
+version: 0.1.0
+date-released: 2026-11-22
+license: Apache-2.0
+repository-code: https://github.com/XXJanusXX/semantic-provenance
