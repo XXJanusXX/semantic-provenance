@@ -1,0 +1,96 @@
+%% Figure 1 — LENS High-Level Architecture
+%% Recommended export: A4 landscape, SVG or PDF.
+%%{init: {
+  "theme": "base",
+  "flowchart": {
+    "htmlLabels": true,
+    "curve": "basis",
+    "nodeSpacing": 28,
+    "rankSpacing": 42,
+    "padding": 12
+  },
+  "themeVariables": {
+    "fontFamily": "Arial, sans-serif",
+    "fontSize": "13px",
+    "lineColor": "#526579",
+    "primaryTextColor": "#172B4D",
+    "clusterBkg": "#F7F9FC",
+    "clusterBorder": "#8295A8"
+  }
+}}%%
+
+flowchart TB
+    INPUT["MULTILINGUAL INFORMATION SOURCES<br/>Natural Language · Structured Data · Enterprise Records"]
+
+    subgraph CORE["LENS — LANGUAGE, ENTERPRISE, NETWORKED SEMANTICS"]
+        direction LR
+
+        subgraph SEM["LAYER 1 — SEMANTIC REPRESENTATION AND PRESERVATION"]
+            direction TB
+            SEMREP["Multilingual Semantic Representation<br/>Formal Semantic Structures<br/>Neural Embeddings"]
+            INV["Semantic Invariant Model<br/>Entities · Relations<br/>Negation · Temporal Information<br/>Modality · Quantities · Constraints"]
+            PRES["Semantic Preservation Engine<br/>Semantic Fidelity (SF)<br/>Semantic Loss (SL)<br/>Reconciliation Failure Rate (RFR)"]
+            SEMREP --> INV --> PRES
+        end
+
+        subgraph CRYPTO["LAYER 2 — CRYPTOGRAPHIC PROVENANCE AND INTEGRITY"]
+            direction TB
+            CANON["Canonicalisation"]
+            HASH["Content Addressing<br/>Cryptographic Hashing"]
+            SIGN["Digital Signatures<br/>Key Identity Binding"]
+            PROV["Provenance Registry<br/>Transformation Lineage<br/>Evidence Links"]
+            VERIFY["Integrity and Provenance Verification<br/>Provenance Continuity (PC)"]
+            DLT["Optional DLT Anchoring<br/>Deferred / Exploratory"]
+            CANON --> HASH --> SIGN --> PROV --> VERIFY
+            PROV -. Optional .-> DLT
+        end
+
+        subgraph REPRO["LAYER 3 — REPRODUCIBLE EMPIRICAL EVALUATION"]
+            direction TB
+            DATA["Benchmark Dataset<br/>Transformation Cases<br/>Independent Ground Truth<br/>Semantic-Loss Boundaries"]
+            CONDITIONS["Controlled Experimental Conditions<br/>B0 · B1 · B2 · B3 · B4<br/>B5 Optional / Deferred"]
+            EXEC["Execution and Evidence Capture<br/>Model and Configuration<br/>Source Revision · Dependencies<br/>Manifests · Logs · Outputs"]
+            ANALYSIS["Statistical Analysis<br/>H1 — Primary: Semantic Fidelity<br/>H2 — Secondary: RFR<br/>H3 — Secondary: Detection Performance<br/>H4 — Secondary: Provenance Continuity"]
+            AUDIT["Reproducibility and Independent Review<br/>Case-Level Reconciliation<br/>Evidence Audit Trail"]
+            DATA --> CONDITIONS --> EXEC --> ANALYSIS --> AUDIT
+        end
+    end
+
+    subgraph SUPPORT["SUPPORTING ARCHITECTURAL CAPABILITIES"]
+        direction LR
+        AGENT["Agentic Semantic Interoperability<br/>Verified Semantic Messages"]
+        GOVERN["Enterprise Governance<br/>Auditability · Accountability<br/>Policy · Compliance"]
+        LANG["Multilingual and Dravidian Language Support<br/>Tamil · Telugu · Kannada · Malayalam"]
+    end
+
+    RESULT["RESEARCH OUTPUTS<br/>Effectiveness · Reliability<br/>Reproducibility · Limitations<br/>Operational Boundary Conditions"]
+
+    INPUT --> SEMREP
+    PRES --> CANON
+    VERIFY --> EXEC
+    PRES --> EXEC
+    PRES --> AGENT
+    VERIFY --> GOVERN
+    SEMREP --> LANG
+    AGENT --> GOVERN
+    AUDIT --> RESULT
+
+    classDef input fill:#E9EEF5,stroke:#526579,color:#172B4D,stroke-width:1.5px
+    classDef semantic fill:#E8F1FB,stroke:#3973AC,color:#17365D,stroke-width:1.3px
+    classDef crypto fill:#E8F5ED,stroke:#39845A,color:#174B2D,stroke-width:1.3px
+    classDef evaluation fill:#FFF2DF,stroke:#BD812C,color:#68420C,stroke-width:1.3px
+    classDef support fill:#F0EAFA,stroke:#8061A8,color:#422D61,stroke-width:1.3px
+    classDef output fill:#E3EDF0,stroke:#426D7B,color:#173D49,stroke-width:1.8px
+
+    class INPUT input
+    class SEMREP,INV,PRES semantic
+    class CANON,HASH,SIGN,PROV,VERIFY,DLT crypto
+    class DATA,CONDITIONS,EXEC,ANALYSIS,AUDIT evaluation
+    class AGENT,GOVERN,LANG support
+    class RESULT output
+
+    style CORE fill:#FFFFFF,stroke:#526579,stroke-width:2px
+    style SEM fill:#F1F6FC,stroke:#3973AC,stroke-width:1.5px
+    style CRYPTO fill:#F0F8F2,stroke:#39845A,stroke-width:1.5px
+    style REPRO fill:#FFFAF1,stroke:#BD812C,stroke-width:1.5px
+    style SUPPORT fill:#F8F5FC,stroke:#8061A8,stroke-width:1.5px
