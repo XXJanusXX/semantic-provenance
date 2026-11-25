@@ -63,6 +63,20 @@ The research documentation is organised as follows:
 
 Implementation, benchmark data, protocols and evidence will be published in their respective directories as they are prepared for public release. Third-party datasets, models and dependencies retain their own licence terms.
 
+## Architecture and experimental design
+
+The repository includes two editable Mermaid source figures, designed for A4 landscape export:
+
+- [Figure 1 — LENS high-level architecture](docs/architecture/figure-1-lens-high-level-architecture.mmd): the three core research layers and supporting architectural capabilities.
+- [Figure 2 — Experimental conditions and hypothesis mapping](docs/architecture/figure-2-experimental-conditions-hypothesis-mapping.mmd): B0–B5 conditions, H1–H4 comparisons, and evidence reconciliation.
+
+**Figure captions for the DBA proposal**
+
+1. *Figure 1. High-Level Architecture of the LENS Framework.*
+2. *Figure 2. LENS Experimental Conditions, Hypothesis Mapping and Evidence Reconciliation.*
+
+Both figures represent the proposed research design. B5/DLT is optional and deferred from the core confirmatory design. The diagrams do not imply that confirmatory experiments have been executed or authorised.
+
 ## Reproducibility and evidence principles
 
 - Keep detector outputs separate from independently established ground truth.
